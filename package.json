@@ -8,7 +8,10 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui:add": "pnpm --filter @repo/ui ui:add"
+    "ui:add": "pnpm --filter @repo/ui ui:add",
+    "dev:docker": "pnpm run prisma:docker && yarn dev",
+    "prisma:docker": "cd packages/db && pnpm prisma db push --force-reset && pnpm prisma db seed",
+    "start:web": "cd apps/web && pnpm run start"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -19,5 +22,13 @@
   "packageManager": "pnpm@8.9.0",
   "engines": {
     "node": ">=18"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@icons-pack/react-simple-icons": "^9.5.0",
+    "@prisma/client": "^5.15.0"
   }
 }
