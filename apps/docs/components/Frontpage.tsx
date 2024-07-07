@@ -6,7 +6,7 @@
 import Link from "next/link"
 import {Profilebutton} from "@repo/ui/components/profilebutton"
 import {ModeToggle} from "@repo/ui/components/Toggle"
-
+import {AvatarDemo} from "../components/Profilepic"
 
 
 
@@ -22,6 +22,7 @@ export default function Component() {
           <div className="flex items-center gap-4">
             <Profilebutton/>
             <ModeToggle/>
+            <AvatarDemo/>
           </div>
            
         </header>
