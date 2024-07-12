@@ -315,7 +315,7 @@ export function ContentPage() {
   )
 }
 
-function BookIcon(props) {
+function BookIcon(props:any) {
   return (
     <svg
       {...props}
@@ -335,7 +335,7 @@ function BookIcon(props) {
 }
 
 
-function BookmarkIcon(props) {
+function BookmarkIcon(props:any) {
   return (
     <svg
       {...props}
@@ -355,7 +355,7 @@ function BookmarkIcon(props) {
 }
 
 
-function CodeIcon(props) {
+function CodeIcon(props:any) {
   return (
     <svg
       {...props}
@@ -376,7 +376,7 @@ function CodeIcon(props) {
 }
 
 
-function HeadphonesIcon(props) {
+function HeadphonesIcon(props:any) {
   return (
     <svg
       {...props}
@@ -396,7 +396,7 @@ function HeadphonesIcon(props) {
 }
 
 
-function PodcastIcon(props) {
+function PodcastIcon(props:any) {
   return (
     <svg
       {...props}
@@ -419,7 +419,7 @@ function PodcastIcon(props) {
 }
 
 
-function SchoolIcon(props) {
+function SchoolIcon(props:any) {
   return (
     <svg
       {...props}
@@ -444,7 +444,7 @@ function SchoolIcon(props) {
 }
 
 
-function YoutubeIcon(props) {
+function YoutubeIcon(props:any) {
   return (
     <svg
       {...props}

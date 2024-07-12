@@ -1,10 +1,30 @@
-
+"use client"
 import Link from "next/link";
-import {Profilebutton} from "@repo/ui/components/profilebutton";    
+import { Profile } from "./Profile";
 import {ModeToggle} from "@repo/ui/components/Toggle"
 import { AvatarDemo } from "./Profilepic";
+import { useSession } from 'next-auth/react';
+import { Button } from "@repo/ui/components/ui/button";
+
 
 export default function Header() {
+  const { data: session, status: sessionStatus } = useSession();
+  if(session?.user){
+    return (
+        <header className="flex items-center justify-between px-4 py-3 bg-background-dark shadow-sm">
+          <Link href="/" className="flex items-center gap-2" prefetch={false}>
+            <BookIcon className="w-6 h-6 text-primary-foreground-dark" />
+            <span className="text-xl font-bold text-primary-foreground-dark">FIndIThere</span>
+          </Link>
+          <div className="flex items-center gap-4">
+            <Profile/>
+            <ModeToggle/>
+            
+          </div>
+           
+        </header>
+    )
+  }
     return (
         <header className="flex items-center justify-between px-4 py-3 bg-background-dark shadow-sm">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
@@ -12,9 +32,9 @@ export default function Header() {
             <span className="text-xl font-bold text-primary-foreground-dark">FIndIThere</span>
           </Link>
           <div className="flex items-center gap-4">
-            <Profilebutton/>
-            <ModeToggle/>
-            <AvatarDemo/>
+          <Button asChild>
+            <Link href="/api/auth/signin">Login</Link>
+          </Button>
           </div>
            
         </header>
