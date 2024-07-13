@@ -3,18 +3,17 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 dotenv.config();
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY || "key");
+const genAI = new GoogleGenerativeAI("AIzaSyDU-cu_OwZ4ELN4aTPAAxAZBf1S3vRB188");
 
-async function run() {
+export async function run(topic:string) {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-    const prompt =
-        "Write a sonnet about a programmers life, but also make it rhyme.";
-
+    const prompt = `give the resources for ${topic} best youtube channels link, and podcasts in a json array format which has href, label and description`;
+    
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    const text = response.text();
-    console.log(text);
+    
+    return response; 
 }
 
-run();
+
