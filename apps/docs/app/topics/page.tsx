@@ -1,13 +1,14 @@
 // import {Topicpage} from '@ui/components/topic-page'
 
-import { ContentPage } from "../../components/ContentPage";
+import { TopicContentPage } from "../../components/TopicContentPage";
 
 
 
 export default function Page() {
+  const topic = 'web Development';
   return (
     <main>
-      <ContentPage /> 
+      <TopicContentPage topic={topic}/> 
     </main>
   );
 }
